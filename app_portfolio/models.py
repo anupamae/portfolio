@@ -6,7 +6,7 @@ from django.db import models
 class Home(models.Model):
     name = models.CharField(max_length=15)
     first_name = models.CharField(max_length=10)
-    last_name = models.CharField(max_length=5)
+    last_name = models.CharField(max_length=10)
     picture = models.ImageField(upload_to='picture/')
 
     def __str__(self):
@@ -16,7 +16,7 @@ class Home(models.Model):
 
 class About(models.Model):
     title = models.CharField(max_length=15)
-    sub_title= models.CharField(max_length=15)
+    sub_title= models.CharField(max_length=50)
     description = models.TextField(blank=False)
     profile_img = models.ImageField(upload_to='picture/')
 
@@ -26,8 +26,8 @@ class About(models.Model):
     # EXPERIENCE SECTION
 
 class Experience(models.Model):
-    title = models.CharField(max_length=15)
-    company_name = models.CharField(max_length=25)
+    title = models.CharField(max_length=50)
+    company_name = models.CharField(max_length=50)
     period = models.CharField(max_length=30)
     description = models.TextField(blank=False)
 
@@ -37,7 +37,7 @@ class Experience(models.Model):
     # SKILLS SECTION
 
 class Skills(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=50)
     skills = models.TextField(blank=False)
 
     def __str__(self):
@@ -46,7 +46,7 @@ class Skills(models.Model):
     # PROJECTS SECTION
 
 class Projects(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=50)
     description = models.TextField(blank=False)
     skills_used = models.CharField(max_length=100)
     github_link = models.URLField(blank=True)
@@ -57,8 +57,8 @@ class Projects(models.Model):
     #EDUCATION SECTION
 
 class Education(models.Model):
-    title = models.CharField(max_length=15)
-    college_name = models.CharField(max_length=25)
+    title = models.CharField(max_length=100)
+    college_name = models.CharField(max_length=100)
     period = models.CharField(max_length=30)
     description = models.TextField(blank=False)
 
