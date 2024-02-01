@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla One&display=swap");
+
+html,body {
+  line-height: 1rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("background_picture.jpg");
+}
+
+
+.navbar_ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar_li {
+  padding: 1rem 1rem 1rem 1rem;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+.home {
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.home_name {
+  font-size: 5rem;
+  font-family: "Fjalla One";
+  color: #22577a;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin: 0; 
+  padding: 0; 
+}
+
+
+.image {
+  border-radius: 50%;
+  width: 30rem;
+  height: 30rem;
+  margin-left: 5rem;
+}
+@media screen and (max-width: 600px) {
+  .navbar_li {
+    width: 80%;
+    display: block;
+  }
+}

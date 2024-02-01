@@ -1,0 +1,11 @@
+{% extends 'app_portfolio/base.html' %} 
+{% load static %} 
+{% block content %}
+{% for skill in skills_data %}
+<div>
+  <p>skills</p>
+  <p>{{ skill.title }}</p>
+  <p>{{ skill.skills }}</p>
+</div>
+{% endfor %} 
+{% endblock %} 

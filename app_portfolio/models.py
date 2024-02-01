@@ -4,9 +4,7 @@ from django.db import models
     # HOME SECTION
 
 class Home(models.Model):
-    name = models.CharField(max_length=15)
-    first_name = models.CharField(max_length=10)
-    last_name = models.CharField(max_length=10)
+    name = models.CharField(max_length=25)
     picture = models.ImageField(upload_to='picture/')
 
     def __str__(self):

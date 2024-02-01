@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3)yjv63ga(0yboffw6#g8362v2x&di%yzqnb#3mve1$*8l&4e9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_google_fonts',
     'app_portfolio',
 ]
 
@@ -116,11 +117,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+GOOGLE_FONTS_DIR = BASE_DIR / "fonts"
+
+STATIC_URL = '/static/'
+STATIC_DIR = Path(BASE_DIR, 'static')
+STATICFILES_DIRS = Path(BASE_DIR, 'static'), 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

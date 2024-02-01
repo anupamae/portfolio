@@ -1,0 +1,9 @@
+{% extends 'app_portfolio/base.html' %} {% load static %} {% block content %}
+{% for home in homes %}
+<div class="home">
+  <p class="home_name">
+    <span>{{ home.name }} </span>
+    <img src="{{ home.picture.url }}" alt"My image" class="image">
+  </p>
+</div>
+{% endfor %} {% endblock %}

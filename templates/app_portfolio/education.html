@@ -1,0 +1,13 @@
+{% extends 'app_portfolio/base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="education_heading">Education</h1>
+{% for education in education_data %}
+<div>
+  <p>{{ education.title }}</p>
+  <p>{{ education.college_name }}</p>
+  <p>{{ education.period }}</p>
+  <p>{{ education.description }}</p>
+</div>
+{% endfor %}
+{% endblock %}
