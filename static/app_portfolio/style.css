@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla One&display=swap");
 
-html,body {
-  line-height: 1rem;
+html,
+body {
   overflow-y: hidden;
   overflow-x: hidden;
   height: 100vh;
   margin: 0;
   padding: 0;
   background-image: url("background_picture.jpg");
+  box-sizing: border-box;
 }
-
 
 .navbar_ul {
   width: 100%;
@@ -32,6 +32,7 @@ html,body {
 .home {
   padding: 5rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -41,12 +42,11 @@ html,body {
   font-family: "Fjalla One";
   color: #22577a;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
-  margin: 0; 
-  padding: 0; 
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
-
 
 .image {
   border-radius: 50%;
@@ -54,9 +54,91 @@ html,body {
   height: 30rem;
   margin-left: 5rem;
 }
+
+.about {
+  margin: 5rem;
+  height: 50%;
+  padding: 3rem;
+  background-color: #6b8ea6;
+  border-radius: 2rem;
+}
+
+.about_sub_title {
+  font-family: "Fjalla One";
+  font-size: 2rem;
+  text-align: center;
+}
+
+.about_description {
+  font-family: "Fjalla One";
+  font-size: 1rem;
+  padding: 2rem;
+  line-height: 2rem;
+}
+
+.timeline {
+  padding: 20px;
+  margin: 20px auto;
+}
+
+/* Outer Layer with the timeline border */
+.outer {
+  border-left: 2px solid #333;
+  margin: 0;
+}
+
+/* Card container */
+.card {
+  position: relative;
+  margin: 0 0 20px 20px;
+  background-color: #6b8ea6;
+  color: #22577a;
+  border-radius: 1rem;
+  max-width: 100%;
+}
+
+/* Information about the timeline */
+.info {
+  font-family: "Fjalla One";
+  font-size: 1rem;
+  padding: 1rem;
+  line-height: 2rem;
+}
+
+/* Title of the card */
+.title {
+  color: orangered;
+}
+
+/* Timeline dot  */
+.title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  left: -28px;
+  border: 3px solid orangered;
+}
+
 @media screen and (max-width: 600px) {
+  .navbar {
+    background-color: #6b8ea6;
+  }
+
   .navbar_li {
     width: 80%;
     display: block;
+  }
+
+  .home {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .image {
+    width: 20rem;
+    height: 20rem;
+    margin-top: 2rem;
   }
 }

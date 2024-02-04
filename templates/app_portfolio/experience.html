@@ -1,13 +1,18 @@
 {% extends 'app_portfolio/base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="experience_heading">Experience</h1>
-{% for experience in experience_data %}
-<div>
-  <p>{{ experience.title }}</p>
-  <p>{{ experience.period }}</p>
-  <p>{{ experience.sub_title }}</p>
-  <p>{{ experience.description }}</p>
+<div class="timeline">
+  <div class="outer">
+    {% for experience in experience_data %}
+    <div class="card">
+      <div class="info">
+        <h2 class="title">{{ experience.title }}</h2>
+        <h3>{{ experience.period }}</h3>
+        <h4>{{ experience.sub_title }}</h4>
+        <p>{{ experience.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
-{% endfor %}
 {% endblock %}

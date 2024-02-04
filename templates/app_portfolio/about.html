@@ -1,12 +1,10 @@
 {% extends 'app_portfolio/base.html' %}
 {% load static %}
 {% block content %}
-<h1 class="about_heading">About</h1>
 {% for about in about_data %}
-<div>
-  <p>{{ about.title }}</p>
-  <p>{{ about.sub_title }}</p>
-  <p>{{ about.description }}</p>
+<div class="about">
+  <p class="about_sub_title">{{ about.sub_title }}</p>
+  <p class="about_description">{{ about.description }}</p>
 </div>
 {% endfor %}
 {% endblock %}

@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=FjallaOne+One&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{% static 'app_portfolio/style.css' %}" />
+    <script src="{% static 'app_portfolio/portfolio.js' %}"></script> 
   </head>
   <body>
     <header>
@@ -30,6 +31,7 @@
           <li class="navbar_li"><a href="{% url 'portfolio:contacts' %}">Contact</a></li>
         </ul>
       </nav>
+      
     </header>
     {% block content %} {% endblock %}
   </body>
