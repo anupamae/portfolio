@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Home, About, Experience, Projects, Skills, Education, Contacts
 
 # Create your views here.
@@ -8,6 +8,15 @@ def home(request):
         "homes": homes
     }
     return render(request, 'app_portfolio/home.html', context) 
+def download_pdf(request):
+    home_instance = Home.objects.first()  # Assuming you want to download from the first instance
+    pdf_path = home_instance.resume.path  # Assuming your model has a FileField named 'pdf_file'
+
+    # Open the PDF file
+    with open(pdf_path, 'rb') as resume:
+        response = HttpResponse(resume.read(), content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="example.pdf"'
+        return response
 
 def about(request):
     about_data = About.objects.all()  

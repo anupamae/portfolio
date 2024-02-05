@@ -1,9 +1,18 @@
-{% extends 'app_portfolio/base.html' %} {% load static %} {% block content %}
+{% extends 'app_portfolio/base.html' %}
+{% load static %}
+{% block content %} 
 {% for home in homes %}
 <div class="home">
-  <p class="home_name">
-    <span>{{ home.name }} </span>
-    <img src="{{ home.picture.url }}" alt"My image" class="image">
-  </p>
+  <div class="home_name">
+    <span>
+      <span>{{ home.name }}</span>
+      {% if homes %}
+      <form action="{{ home.resume.url }}" method="get" class="resume">
+        <button type="submit" class="button">Resume</button>
+      </form>
+      {% endif %}
+    </span>
+    <img src="{{ home.picture.url }}" alt="My image" class="image" />
+  </div>
 </div>
 {% endfor %} {% endblock %}

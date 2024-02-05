@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, about, experience, skills, education, contacts, projects
+from .views import home, download_pdf, about, experience, skills, education, contacts, projects
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -7,6 +7,7 @@ app_name = 'app_portfolio'
 
 urlpatterns = [
     path('', home, name='home'),
+    path('download-pdf/', download_pdf, name='download_pdf'),
     path('about/', about, name='about'),
     path('skills/', skills, name='skills'),
     path('experience/', experience, name='experience'),

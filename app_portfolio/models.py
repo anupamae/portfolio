@@ -6,6 +6,7 @@ from django.db import models
 class Home(models.Model):
     name = models.CharField(max_length=25)
     picture = models.ImageField(upload_to='picture/')
+    resume = models.FileField(upload_to='picture/', default='Anupama_Ellath_CV.pdf')
 
     def __str__(self):
         return self.name
@@ -16,7 +17,7 @@ class About(models.Model):
     title = models.CharField(max_length=15)
     sub_title= models.CharField(max_length=50)
     description = models.TextField(blank=False)
-    profile_img = models.ImageField(upload_to='picture/')
+    profile_img = models.ImageField(upload_to='picture/',)
 
     def __str__(self):
         return self.sub_title
