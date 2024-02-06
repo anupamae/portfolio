@@ -23,15 +23,11 @@
       <nav class="navbar">
         <ul class="navbar_ul">
           <li class="navbar_li"><a href="{% url 'portfolio:home' %}"> Home </a></li>
-          <li class="navbar_li"><a href="{% url 'portfolio:about' %}">About</a></li>
-          <li class="navbar_li"><a href="{% url 'portfolio:experience' %}">Experience</a></li>
-          <li class="navbar_li"><a href="{% url 'portfolio:skills' %}">Skills</a></li>
-          <li class="navbar_li"><a href="{% url 'portfolio:projects' %}">Projects</a></li>
-          <li class="navbar_li"><a href="{% url 'portfolio:education' %}">Education</a></li>
-          <li class="navbar_li"><a href="{% url 'portfolio:contacts' %}">Contact</a></li>
+          <li class="navbar_li"><a href="#education">Education</a></li>
+          <li class="navbar_li"><a href="#skills">Skills</a></li>
+          <li class="navbar_li"><a href="#projects">Projects</a></li>
         </ul>
-      </nav>
-      
+      </nav> 
     </header>
     {% block content %} {% endblock %}
   </body>
