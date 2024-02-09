@@ -1,11 +1,10 @@
 {% extends 'app_portfolio/base.html' %}
 {% load static %}
-{% block content %} 
+{% block content %}
 
 <!-- HOME SECTION -->
-
 {% for home in homes %}
-<div class="home">
+<div class="home" id="home">
   <div class="home_name">
     <span>
       <span>{{ home.name }}</span>
@@ -14,24 +13,32 @@
         <button type="submit" class="button">Resume</button>
       </form>
       {% endif %}
+      <a href="#about">
+        <button type="submit" class="button">About Me</button>
+      </a>
     </span>
     <img src="{{ home.picture.url }}" alt="My image" class="image" />
   </div>
 </div>
-{% endfor %} 
+{% endfor %}
 
 <!-- ABOUT SECTION AND EXPERIENCE -->
-
-<div id="experience_and_about" class="experience-and-about">
+<div id="about" class="experience-and-about">
   {% for about in about_data %}
-  <div id="about" class="about">
+  <div class="about">
     <p class="about_sub_title">{{ about.sub_title }}</p>
     <p class="about_description">{{ about.description }}</p>
+    <div class="about_icons">
+    <a href="https://github.com/anupamae">
+    <i class="fa-brands fa-github"></i> </a>
+    <a href="https://www.linkedin.com/in/anupama-ellath/">
+    <i class="fa-brands fa-linkedin"></i></a>
+    </div>
   </div>
   {% endfor %}
 
-  <!-- EXPERIENCE SECTION -->
 
+  <!-- EXPERIENCE SECTION -->
   <div id="experience" class="timeline">
     <div class="outer">
       {% for experience in experience_data %}
@@ -49,7 +56,6 @@
 </div>
 
 <!-- EDUCATION SECTION -->
-
 <div id="education" class="education">
   <div class="timeline">
     <div class="outer">
@@ -68,7 +74,6 @@
 </div>
 
 <!-- SKILLS SECTION -->
-
 <div id="skills" class="skills-container">
   <div class="skills">
     {% for skill in skills_data %}
@@ -76,18 +81,44 @@
       <h2 class="skills-title">{{ skill.title }}</h2>
       <p class="skills-list">{{ skill.skills }}</p>
     </div>
-    {% endfor %} 
+    {% endfor %}
   </div>
-<div>
-<!-- PROJECTS SECTION -->
-
-<div id="projects">
-  {% for projects in projects_data %}
-  <p>{{ projects.title }}</p>
-  <p>{{ projects.description }}</p>
-  <p>{{ projects.skills_used }}</p>
-  <p>{{ projects.github_links }}</p>
 </div>
-{% endfor %}
 
-{% endblock %}
+<!-- PROJECTS SECTION -->
+<div id="projects" class="projects">
+  <div class="css-slider-wrapper">
+    <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
+    <input type="radio" name="slider" class="slide-radio2" id="slider_2">
+    <input type="radio" name="slider" class="slide-radio3" id="slider_3">
+    <input type="radio" name="slider" class="slide-radio4" id="slider_4">
+    <div class="slider-pagination">
+      <label for="slider_1" class="page1"></label>
+      <label for="slider_2" class="page2"></label>
+      <label for="slider_3" class="page3"></label>
+      <label for="slider_4" class="page4"></label>
+    </div>
+    <div class="next control">
+      <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-right"></i></label>
+      <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-right"></i></label>
+    </div>
+    <div class="previous control">
+      <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-left"></i></label>
+      <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-left"></i></label>
+    </div>
+    <div class="slider slide1">
+      <div>
+        {% for project in projects_data %}
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+        <p>{{ project.skills_used }}</p>
+        <a href="http://www.htmllion.com/pure-css-based-fullscreen-slider.html" class="scroll-button">Github</a> <a href="#" class="scroll-button">Download</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endblock%}
+
