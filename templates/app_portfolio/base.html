@@ -15,22 +15,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=FjallaOne+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata+One&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{% static 'app_portfolio/style.css' %}" />
-    <script src="{% static 'app_portfolio/portfolio.js' %}"></script> 
+    <script src="{% static 'app_portfolio/portfolio.js' %}"></script>
   </head>
   <body>
     <header>
       <nav class="navbar">
         <ul class="navbar_ul">
-          <li class="navbar_li"><a href="#home"> Home </a></li>
-          <li class="navbar_li"><a href="#education">Education</a></li>
-          <li class="navbar_li"><a href="#skills">Skills</a></li>
-          <li class="navbar_li"><a href="#projects">Projects</a></li>
+          <li class="navbar_li"><a href="#home" class="navbar_links"> Home </a></li>
+          <li class="navbar_li"><a href="#education" class="navbar_links">Education</a></li>
+          <li class="navbar_li"><a href="#skills" class="navbar_links">Skills</a></li>
+          <li class="navbar_li"><a href="#projects" class="navbar_links">Projects</a></li>
         </ul>
       </nav> 
     </header>
+
+    <footer className='footer'>
+      <p className='footer-p'>&copy; Anupama Ellath</p>
+    </footer>
     {% block content %} {% endblock %}
+
   </body>
 </html>
 

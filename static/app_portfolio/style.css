@@ -1,26 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Fjalla One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 
 html,
 body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url("background_picture.jpg");
+  background-image: url("/assets/pictures/job-savelsberg-tJyQufoHcIA-unsplash.jpg");
   box-sizing: border-box;
+  background-color: #1C2833 ;
 }
 
 .navbar {
   position: fixed;
   width: 100%;
   z-index: 9999;
-  background-color: #22577a;
+}
+
+.navbar-toggled {
+  background-color: #f9dbbd;
 }
 .navbar_ul {
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: center;
-  text-decoration: none;
 }
 
 .navbar_li {
@@ -30,8 +33,38 @@ body {
   align-items: center;
   vertical-align: middle;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 
+.navbar_li a:hover,
+.navbar_li a:active {
+  color: #a53860;
+  text-decoration: underline;
+  border-bottom: 3px solid var(--black);
+}
+.navbar_links {
+  color: #da627d;
+  text-decoration: none;
+}
+.navbar_links a:active {
+  text-decoration: underline;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.footer-p {
+  color: white;
+  font-size: smaller;
+  font-weight: bolder;
+  text-align: center;
+}
 .home {
   padding: 2rem;
   display: flex;
@@ -45,7 +78,7 @@ body {
 .home_name {
   font-size: 5rem;
   font-family: "Fjalla One";
-  color: #22577a;
+  color: #bc4749;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +102,7 @@ body {
 
 .button {
   appearance: button;
-  background-color: #1899d6;
+  background-color: #f08080;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -99,7 +132,7 @@ body {
 
 .button:after {
   background-clip: padding-box;
-  background-color: #1cb0f6;
+  background-color: #da627d;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;
@@ -146,23 +179,23 @@ body {
 .about {
   margin: 3rem;
   padding: 1rem;
-  background-color: #6b8ea6;
+  background-color: #f4acb7;
   border-radius: 2rem;
   width: 40%;
   height: 40%;
 }
 
 .about_sub_title {
-  font-family: "Fjalla One";
   font-size: 2rem;
   text-align: center;
+  color: #a53860;
   margin-top: 1rem;
 }
 
 .about_description {
-  font-family: "Fjalla One";
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 2rem;
+  color: #a53860;
 }
 
 .about_icons {
@@ -170,10 +203,14 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  color: azure;
+  color: #bc4749;
   gap: 1rem;
+  text-decoration: none;
 }
-
+.about_icons a:hover,
+.about_icons a:active {
+  color: #a53860;
+}
 .education {
   padding-top: 2rem;
   min-height: 100vh;
@@ -190,7 +227,7 @@ body {
 
 /* Outer Layer with the timeline border */
 .outer {
-  border-left: 2px solid #333;
+  border-left: 2px solid #a53860;
   margin: 0;
 }
 
@@ -198,22 +235,21 @@ body {
 .card {
   position: relative;
   margin: 0 0 20px 20px;
-  background-color: #6b8ea6;
-  color: #22577a;
+  background-color: #f4acb7;;
+  color: #063447;
   border-radius: 1rem;
 }
 
 /* Information about the timeline */
 .info {
-  font-family: "Fjalla One";
-  font-size: 1rem;
+  font-size: 1.4rem;
   padding: 1rem;
-  line-height: 2rem;
+  line-height: 1.8rem;
 }
 
 /* Title of the card */
 .title {
-  color: orangered;
+  color: #a53860;
 }
 
 /* Timeline dot  */
@@ -222,7 +258,7 @@ body {
   position: absolute;
   width: 10px;
   height: 10px;
-  background: white;
+  background: #a53860;
   border-radius: 999px;
   left: -28px;
   border: 3px solid orangered;
@@ -243,14 +279,14 @@ body {
   min-width: 200px;
   padding: 0.5rem;
   margin: 1rem;
-  background-color: #6b8ea6;
-  border: 3px solid red;
+  background-color: #f4acb7;
+  border: 3px solid #a53860;
   border-radius: 2rem;
 }
 
 .skills-title {
   text-align: center;
-  color: #333;
+  color: #a53860;
 }
 
 .skills-list {
@@ -259,25 +295,14 @@ body {
   word-spacing: 1rem;
 }
 
-.projects {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 2rem;
-}
-
 @media screen and (max-width: 600px) {
-  body{
-    margin:0;
-    padding:0;
+  body {
+    margin: 0;
+    padding: 0;
   }
   .navbar {
-    background-color: #6b8ea6;
     position: fixed;
     width: 100%;
-    z-index: 9999;
-    background-color: #22577a;
   }
   .navbar_ul {
     margin: 0;
@@ -302,7 +327,7 @@ body {
     height: 20rem;
     margin-top: 2rem;
   }
-  .education{
+  .education {
     flex-direction: column;
   }
 
@@ -314,12 +339,10 @@ body {
     padding-left: 7rem;
   }
 
-  .about, .education
-  .timeline {
+  .about,
+  .education .timeline {
     flex: 1 0 100%;
   }
-
-  
 
   .about {
   }

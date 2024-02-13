@@ -1,6 +1,4 @@
-{% extends 'app_portfolio/base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'app_portfolio/base.html' %} {% load static %} {% block content %}
 
 <!-- HOME SECTION -->
 {% for home in homes %}
@@ -29,14 +27,11 @@
     <p class="about_sub_title">{{ about.sub_title }}</p>
     <p class="about_description">{{ about.description }}</p>
     <div class="about_icons">
-    <a href="https://github.com/anupamae">
-    <i class="fa-brands fa-github"></i> </a>
-    <a href="https://www.linkedin.com/in/anupama-ellath/">
-    <i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/anupamae"> <i class="fa-brands fa-github"></i> </a>
+      <a href="https://www.linkedin.com/in/anupama-ellath/"> <i class="fa-brands fa-linkedin"></i></a>
     </div>
   </div>
   {% endfor %}
-
 
   <!-- EXPERIENCE SECTION -->
   <div id="experience" class="timeline">
@@ -86,30 +81,8 @@
 </div>
 
 <!-- PROJECTS SECTION -->
-<div id="projects" class="projects">
+<div id="projects" class="projects-container">
   <div class="css-slider-wrapper">
-    <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
-    <input type="radio" name="slider" class="slide-radio2" id="slider_2">
-    <input type="radio" name="slider" class="slide-radio3" id="slider_3">
-    <input type="radio" name="slider" class="slide-radio4" id="slider_4">
-    <div class="slider-pagination">
-      <label for="slider_1" class="page1"></label>
-      <label for="slider_2" class="page2"></label>
-      <label for="slider_3" class="page3"></label>
-      <label for="slider_4" class="page4"></label>
-    </div>
-    <div class="next control">
-      <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-right"></i></label>
-      <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-right"></i></label>
-      <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-right"></i></label>
-      <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-right"></i></label>
-    </div>
-    <div class="previous control">
-      <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-left"></i></label>
-      <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-left"></i></label>
-      <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-left"></i></label>
-      <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-left"></i></label>
-    </div>
     <div class="slider slide1">
       <div>
         {% for project in projects_data %}
@@ -120,5 +93,5 @@
         {% endfor %}
       </div>
     </div>
-    {% endblock%}
-
+  </div>
+{% endblock%}
