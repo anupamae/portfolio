@@ -5,25 +5,31 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-image: url("/assets/pictures/job-savelsberg-tJyQufoHcIA-unsplash.jpg");
   box-sizing: border-box;
-  background-color: #1C2833 ;
+  background-color: #fefae0;
+}
+
+body {
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .navbar {
   position: fixed;
-  width: 100%;
+  display: flex;
+  width: 100vw;
   z-index: 9999;
-}
-
-.navbar-toggled {
   background-color: #f9dbbd;
 }
+
 .navbar_ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  flex: 1;
   text-align: center;
+  align-items: center;
+  list-style: none;
 }
 
 .navbar_li {
@@ -50,13 +56,14 @@ body {
   text-decoration: underline;
 }
 .footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center;
 }
 
 .footer-p {
@@ -235,7 +242,7 @@ body {
 .card {
   position: relative;
   margin: 0 0 20px 20px;
-  background-color: #f4acb7;;
+  background-color: #f4acb7;
   color: #063447;
   border-radius: 1rem;
 }
@@ -293,6 +300,43 @@ body {
   font-size: 20px;
   line-height: 2rem;
   word-spacing: 1rem;
+}
+
+.projects-full {
+  padding: 3rem;
+}
+
+.projects-container {
+  border-radius: 2rem;
+  background-color: #a53860;
+  display: flex;
+  align-content: center;
+  justify-items: center;
+}
+
+.projects {
+  flex: 1;
+}
+
+.project-content {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-details{
+  height: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-title {
+  padding-bottom: 1rem;
+  font-size: 3rem;
 }
 
 @media screen and (max-width: 600px) {
