@@ -113,16 +113,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+GOOGLE_FONTS = ["Noto Sans", "Roboto", "Dancing Script"]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-GOOGLE_FONTS_DIR = BASE_DIR / "fonts"
-
 STATIC_URL = '/static/'
 STATIC_DIR = Path(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    Path(BASE_DIR, 'static'), 
+    Path(BASE_DIR, 'static')
 ]
 
 MEDIA_URL = '/media/'

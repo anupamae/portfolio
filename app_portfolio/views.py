@@ -2,8 +2,6 @@ from django.shortcuts import render, HttpResponse
 from .models import Home, About, Experience, Projects, Skills, Education
 
 # Create your views here.
-
-
 def home(request):
     homes = Home.objects.all()
     about_data = About.objects.all()

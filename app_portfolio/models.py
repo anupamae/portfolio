@@ -38,6 +38,9 @@ class Experience(models.Model):
 class Skills(models.Model):
     title = models.CharField(max_length=50)
     skills = models.TextField(blank=False)
+    
+    def skillList(self):
+        return self.skills.split(',')
 
     def __str__(self):
         return self.title
@@ -49,6 +52,7 @@ class Projects(models.Model):
     description = models.TextField(blank=False)
     skills_used = models.CharField(max_length=100)
     github_link = models.URLField(blank=True)
+    demo_link = models.URLField(blank=True)
 
     def __str__(self) :
         return self.title
