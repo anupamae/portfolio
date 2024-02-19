@@ -22,7 +22,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav class="navbar" id="navbar">
         <ul class="navbar_ul">
           <li class="navbar_li"><a href="#home" class="navbar_links current_page"> Home </a></li>
           <li class="navbar_li"><a href="#education" class="navbar_links">Education</a></li>
@@ -39,25 +39,38 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-      function openGitHub(github_link) {
-        if (github_link) {
-            window.open(github_link, '_blank');
-        } else {
-            alert("GitHub repository URL not provided.");
-        }
-      }
-      document.addEventListener("DOMContentLoaded", function() {
+     document.addEventListener("DOMContentLoaded", function() {
         var navbarLinks = document.querySelectorAll("a.navbar_links");
-      
         navbarLinks.forEach(function(link) {
           link.addEventListener("click", function(e) {
+            $(document).off("scroll");
             navbarLinks.forEach(function(navLink) {
               navLink.classList.remove("current_page");
             });
             this.classList.add("current_page");
+            window.setTimeout(() => {
+              $(document).on("scroll", onScroll);
+            }, 500);
           });
         });
       });
+      $(document).ready(function() {
+        $(document).on("scroll", onScroll);
+      });
+      
+      function onScroll(event) {
+        var scrollPos = $(document).scrollTop();
+        $('#navbar a').each(function() {
+          var currLink = $(this);
+          var refElement = $(currLink.attr("href"));
+          if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() + 20 > scrollPos) {
+            $('#navbar ul li a').removeClass("current_page");
+            currLink.addClass("current_page");
+          } else {
+            currLink.removeClass("current_page");
+          }
+        });
+      }      
     </script>
     <script src="{% static 'app_portfolio/portfolio.js' %}"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
