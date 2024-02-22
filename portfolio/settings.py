@@ -18,18 +18,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-MEDIA_ROOT       =  BASE_DIR / 'media'
-STATIC_ROOT      =  BASE_DIR / 'static'
+MEDIA_ROOT  =  Path(BASE_DIR, 'media')
+# STATIC_ROOT =  Path(BASE_DIR, 'static')
 
-TEMPLATE_DIRS    = (
-    BASE_DIR / 'templates',
+TEMPLATE_DIRS = (
+    Path(BASE_DIR, 'templates'),
 )
 
 STATICFILES_DIRS = (
+    Path(BASE_DIR, 'static'),
+    Path(BASE_DIR, 'static', 'app_portfolio'),
 )
 
-STATIC_URL         = '/static/'
-MEDIA_URL          = '/media/'
+STATIC_URL = '/static/'
+MEDIA_URL  = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
