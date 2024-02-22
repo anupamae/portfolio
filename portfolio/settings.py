@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 MEDIA_ROOT  =  Path(BASE_DIR, 'media')
-# STATIC_ROOT =  Path(BASE_DIR, 'static')
+#STATIC_ROOT =  Path(BASE_DIR, 'static')
 
 TEMPLATE_DIRS = (
     Path(BASE_DIR, 'templates'),
@@ -27,7 +27,6 @@ TEMPLATE_DIRS = (
 
 STATICFILES_DIRS = (
     Path(BASE_DIR, 'static'),
-    Path(BASE_DIR, 'static', 'app_portfolio'),
 )
 
 STATIC_URL = '/static/'
