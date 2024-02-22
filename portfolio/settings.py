@@ -14,7 +14,22 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = Path(BASE_DIR, 'templates')
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+MEDIA_ROOT       =  BASE_DIR / 'media'
+STATIC_ROOT      =  BASE_DIR / 'static'
+
+TEMPLATE_DIRS    = (
+    BASE_DIR / 'templates',
+)
+
+STATICFILES_DIRS = (
+)
+
+STATIC_URL         = '/static/'
+MEDIA_URL          = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -56,7 +71,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,17 +130,7 @@ USE_TZ = True
 
 GOOGLE_FONTS = ["Noto Sans", "Roboto", "Dancing Script"]
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    Path(BASE_DIR, 'static')
-]
-
-MEDIA_URL = 'media/'
-MEDIA_ROOT = Path(BASE_DIR, 'media')
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
