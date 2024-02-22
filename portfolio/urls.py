@@ -20,6 +20,5 @@ from app_portfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   path('', include('app_portfolio.urls', namespace='portfolio'))
-
+    path('', include('app_portfolio.urls', namespace='portfolio'))
 ]
